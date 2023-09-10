@@ -8,8 +8,6 @@
 
 **Frontend** - vue.js
 
-**models** - предобученные модели, python3
-
 **analytics** - python3, fastapi, ошибки, кластеры, эмоции, поиск семантический, логичность вопросов
 
 **DocAPI** - API Documentation описывает работу с сервисами решения
