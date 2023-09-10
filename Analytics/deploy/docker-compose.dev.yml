@@ -1,0 +1,16 @@
+version: '3.9'
+
+services:
+  api:
+    ports:
+      # Exposes application port.
+    - "8008:8008"
+    build:
+      target: dev
+    volumes:
+      # Adds current directory as volume.
+    - .:/app/src/
+    environment:
+      # Enables autoreload.
+      MYVOTE_ANALYTICS_RELOAD: "True"
+      MYVOTE_ANALYTICS_WORKERS_COUNT: 1

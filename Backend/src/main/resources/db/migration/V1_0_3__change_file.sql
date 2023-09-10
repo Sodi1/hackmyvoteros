@@ -1,0 +1,1 @@
+ALTER TABLE file ADD COLUMN created_at timestamp without time zone;

@@ -1,0 +1,28 @@
+version: '3.9'
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: ./deploy/Dockerfile
+      target: prod
+    image: ${MYVOTE_ANALYTICS_IMAGE}:${MYVOTE_ANALYTICS_VERSION:-latest}
+    ports:
+    - "8008:8008"
+    restart: always
+    environment:
+      MYVOTE_ANALYTICS_HOST: 0.0.0.0
+      MYVOTE_ANALYTICS_DB_HOST: host.docker.internal
+      MYVOTE_ANALYTICS_DB_PORT: 5432
+      MYVOTE_ANALYTICS_DB_USER: postgres
+      MYVOTE_ANALYTICS_DB_PASS: postgres
+      MYVOTE_ANALYTICS_DB_BASE: myvote
+      MYVOTE_ANALYTICS_RABBIT_HOST: myvote_analytics-rmq
+      MYVOTE_ANALYTICS_REDIS_HOST: myvote_analytics-redis
+    extra_hosts:
+    - "host.docker.internal:host-gateway"
+volumes:
+  myvote_analytics-db-data:
+    name: myvote_analytics-db-data
+  myvote_analytics-models:
+    name: myvote_analytics-models

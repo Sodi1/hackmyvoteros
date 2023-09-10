@@ -1,15 +1,15 @@
 # Программный модуль обработки данных опросов сервиса «Мой голос» с собственным  API для интеграции в готовые решения
 
-Ссылка на прототип: [https://myvote.kovalev.team/](url)
+Ссылка на прототип (Войти как гость): [https://myvote.kovalev.team/](url)
 
 Описания проектов находятся в корне папок, в проектах, в файлах Readme.md.
 
-**Backend** -  Java 11, Spring Boot, ehcache(in-memory cache)
+**Backend** -  Java 17, Spring Boot, ehcache(in-memory cache), статистика, обработка запросов
 
 **Frontend** - vue.js
 
 **models** - предобученные модели, python3
 
-**api** - python3, fastapi
+**analytics** - python3, fastapi, ошибки, кластеры, эмоции, поиск семантический, логичность вопросов
 
 **DocAPI** - API Documentation описывает работу с сервисами решения

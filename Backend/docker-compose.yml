@@ -1,0 +1,28 @@
+version: '3'
+services:
+  myvote-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8667:8667"
+    environment:
+      SERVER_PORT: 8667
+      DB_NAME: myvote
+      DB_USER: postgres
+      DB_HOST: postgres-db
+      DB_PORT: 5432
+      DB_SCHEMA: postgres
+      DB_PASSWORD: example
+      JPA_SHOW_SQL: true
+    depends_on:
+      - postgres-db
+
+  postgres-db:
+    image: postgres
+    environment:
+      POSTGRES_DB: myvote
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: example
+    ports:
+      - "5433:5432"
